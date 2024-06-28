@@ -39,7 +39,7 @@ def refreshToken():
 
     headers = {"Authorization": "Basic {}".format(getAuth())}
     response = requests.post(REFRESH_TOKEN_URL, data=data, headers=headers)
-    
+
     try:
         return response.json()["access_token"]
     except KeyError:
